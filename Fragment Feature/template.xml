@@ -20,12 +20,20 @@
         help="The name of Feature"/>
 
     <parameter
+        id="showComponents"
+        name="Do you want to see the components that are being created?"
+        type="boolean"
+        default="false"
+        help="Do you want to see the components that are being created?" />
+
+    <parameter
         id="fragmentName"
         name="Fragment Name"
         type="string"
         constraints="class|nonempty|unique"
         default="MainFragment"
         suggest="${featureName}Fragment"
+        visibility="showComponents"
         help="The name of the fragment class to create" />
 
     <parameter
@@ -35,6 +43,7 @@
         constraints="layout|nonempty|unique"
         default="fragment_blank"
         suggest="fragment_${classToResource(featureName)}"
+        visibility="showComponents"
         help="The name of the layout to create" />
 
     <parameter
@@ -44,6 +53,7 @@
         constraints="class|nonempty|unique"
         default="MainView"
         suggest="${featureName}View"
+        visibility="showComponents"
         help="The name of the view interface to create" />
 
     <parameter
@@ -53,7 +63,18 @@
         constraints="class|nonempty|unique"
         default="MainPresenter"
         suggest="${featureName}Presenter"
+        visibility="showComponents"
         help="The name of the presenter class to create" />
+
+    <parameter
+        id="screenName"
+        name="Cicerone Screen Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainScreen"
+        suggest="${featureName}Screen"
+        visibility="showComponents"
+        help="The name of the Cicerone screen class to create" />
 
     <thumbs>
         <thumb>template_blank_fragment.png</thumb>

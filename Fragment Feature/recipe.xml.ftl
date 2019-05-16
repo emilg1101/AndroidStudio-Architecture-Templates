@@ -15,6 +15,9 @@
     <instantiate from="root/src/app_package/BlankPresenter.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${presenterName}.kt" />
 
+    <instantiate from="root/src/app_package/BlankScreen.kt.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/${screenName}.kt" />
+
     <instantiate from="root/res/layout/fragment_blank.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
 
