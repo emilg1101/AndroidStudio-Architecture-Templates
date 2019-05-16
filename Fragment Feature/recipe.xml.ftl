@@ -12,6 +12,10 @@
     <instantiate from="root/src/app_package/BlankView.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${viewName}.kt" />
 
-    <open file="${escapeXmlAttribute(srcOut)}/${fragmentName}.kt" />
+    <instantiate from="root/src/app_package/BlankPresenter.kt.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/${presenterName}.kt" />
+
+    <open file="${escapeXmlAttribute(srcOut)}/${presenterName}.kt" />
     <open file="${escapeXmlAttribute(srcOut)}/${viewName}.kt" />
+    <open file="${escapeXmlAttribute(srcOut)}/${fragmentName}.kt" />
 </recipe>
