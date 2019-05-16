@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <template
     format="5"
-    revision="3"
-    name="Simple Template"
-    description="Simple Template."
+    revision="1"
+    name="Fragment Feature"
+    description="Create Fragment and View"
     minApi="7"
     minBuildApi="8">
 
@@ -12,12 +12,39 @@
     <dependency name="android-support-v4" revision="8" />
 
     <parameter
-        id="className"
+        id="featureName"
+        name="Feature Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="Main"
+        help="The name of Feature"/>
+
+    <parameter
+        id="fragmentName"
         name="Fragment Name"
         type="string"
         constraints="class|nonempty|unique"
-        default="BlankFragment"
+        default="MainFragment"
+        suggest="${featureName}Fragment"
         help="The name of the fragment class to create" />
+
+    <parameter
+        id="viewName"
+        name="View Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainView"
+        suggest="${featureName}View"
+        help="The name of the view interface to create" />
+
+    <parameter
+        id="presenterName"
+        name="Presenter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainPresenter"
+        suggest="${featureName}Presenter"
+        help="The name of the presenter class to create" />
 
     <thumbs>
         <thumb>template_blank_fragment.png</thumb>
