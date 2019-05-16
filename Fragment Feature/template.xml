@@ -29,6 +29,15 @@
         help="The name of the fragment class to create" />
 
     <parameter
+        id="layoutName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        suggest="fragment_${classToResource(featureName)}"
+        help="The name of the layout to create" />
+
+    <parameter
         id="viewName"
         name="View Name"
         type="string"
