@@ -84,7 +84,39 @@
         default="MainModule"
         suggest="${featureName}Module"
         visibility="showComponents"
-        help="The name of the Dagger2 module class to create" />
+        help="The name of the Dagger2 class to create" />
+
+    <parameter
+        id="createScope"
+        name="Do you want create Dagger2 Scope?"
+        type="boolean"
+        default="true"
+        help="Do you want create Dagger2 Scope?" />
+
+    <parameter
+        id="createQualifier"
+        name="Do you want create Dagger2 Qualifier?"
+        type="boolean"
+        default="true"
+        help="Do you want create Dagger2 Qualifier?" />
+
+    <parameter
+        id="scopeName"
+        name="Dagger2 Scope Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainScope"
+        suggest="${featureName}Scope"
+        visibility="false" />
+
+    <parameter
+        id="qualifierName"
+        name="Dagger2 Qualifier Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainQualifier"
+        suggest="${featureName}Qualifier"
+        visibility="false" />
 
     <thumbs>
         <thumb>template_blank_fragment.png</thumb>
