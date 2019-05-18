@@ -1,6 +1,10 @@
 package ${escapeKotlinIdentifiers(packageName)}
 
+<#if isBaseClassesEnable>
+import ${basePackage}.${baseFragment}
+<#else>
 import com.arellomobile.mvp.MvpAppCompatFragment
+</#if>
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import javax.inject.Inject
@@ -9,7 +13,7 @@ import javax.inject.Provider
 import ${applicationPackage}.R
 </#if>
 
-class ${fragmentName} : MvpAppCompatFragment(), ${viewName} {
+class ${fragmentName} : <#if isBaseClassesEnable>${baseFragment}<#else>MvpAppCompatFragment</#if>(), ${viewName} {
 
     @ProvidePresenter
     fun provide${presenterName}() = presenterProvider.get()

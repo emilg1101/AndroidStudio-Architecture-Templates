@@ -1,13 +1,18 @@
 package ${escapeKotlinIdentifiers(packageName)}
 
+<#if isBaseClassesEnable>
+import ${basePackage}.${basePresenter}
+<#else>
 import com.arellomobile.mvp.MvpPresenter
+import io.reactivex.disposables.CompositeDisposable
+</#if>
 import com.arellomobile.mvp.InjectViewState
 import javax.inject.Inject
-import io.reactivex.disposables.CompositeDisposable
 
 @InjectViewState
-class ${presenterName} @Inject constructor() : MvpPresenter<${viewName}>() {
+class ${presenterName} @Inject constructor() : <#if isBaseClassesEnable>${basePresenter}<#else>MvpPresenter</#if><${viewName}>() {
 
+<#if !isBaseClassesEnable>
     private var destroyDisposable = CompositeDisposable()
 
     override fun onDestroy() {
@@ -16,4 +21,5 @@ class ${presenterName} @Inject constructor() : MvpPresenter<${viewName}>() {
             destroyDisposable.dispose()
         }
     }
+</#if>
 }

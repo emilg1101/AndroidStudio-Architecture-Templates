@@ -18,11 +18,13 @@
     <instantiate from="root/src/app_package/BlankScreen.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${screenName}.kt" />
 
-    <instantiate from="root/src/app_package/dagger/BlankModule.kt.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/${moduleName}.kt" />
-
     <instantiate from="root/res/layout/fragment_blank.xml.ftl"
                    to="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+
+    <#if createModule>
+        <instantiate from="root/src/app_package/dagger/BlankModule.kt.ftl"
+                       to="${escapeXmlAttribute(srcOut)}/${moduleName}.kt" />
+    </#if>
 
     <#if createScope>
         <instantiate from="root/src/app_package/dagger/BlankScope.kt.ftl"
