@@ -77,14 +77,11 @@
         help="The name of the Cicerone screen class to create" />
 
     <parameter
-        id="moduleName"
-        name="Dagger2 Module Name"
-        type="string"
-        constraints="class|noempty|unique"
-        default="MainModule"
-        suggest="${featureName}Module"
-        visibility="showComponents"
-        help="The name of the Dagger2 class to create" />
+        id="createModule"
+        name="Do you want create Dagger2 Module?"
+        type="boolean"
+        dafault="true"
+        help="Do you want create Dagger2 Module?" />
 
     <parameter
         id="createScope"
@@ -99,6 +96,15 @@
         type="boolean"
         default="true"
         help="Do you want create Dagger2 Qualifier?" />
+
+    <parameter
+        id="moduleName"
+        name="Dagger2 Module Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainModule"
+        suggest="${featureName}Module"
+        visibility="false" />
 
     <parameter
         id="scopeName"
