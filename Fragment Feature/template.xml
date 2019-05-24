@@ -8,9 +8,7 @@
     minBuildApi="8">
 
     <category value="Fragment" />
-
-    <dependency name="android-support-v4" revision="8" />
-
+    
     <parameter
         id="featureName"
         name="Feature Name"
