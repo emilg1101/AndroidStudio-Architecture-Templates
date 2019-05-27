@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="RecyclerView Adapter"
+    description="Create RecyclerView Adapter and ViewHolder"
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Fragment" />
+
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
