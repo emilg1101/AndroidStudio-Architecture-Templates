@@ -1,4 +1,4 @@
-package ${escapeKotlinIdentifiers(packageName)}
+package ${escapeKotlinIdentifiers(featurePackageName)}
 
 import dagger.Module
 

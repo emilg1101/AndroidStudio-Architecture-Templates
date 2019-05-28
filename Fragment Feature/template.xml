@@ -78,7 +78,7 @@
         id="createModule"
         name="Do you want create Dagger2 Module?"
         type="boolean"
-        dafault="true"
+        default="true"
         help="Do you want create Dagger2 Module?" />
 
     <parameter
@@ -121,6 +121,13 @@
         default="MainQualifier"
         suggest="${featureName}Qualifier"
         visibility="false" />
+
+    <parameter
+      id="featurePackageName"
+      type="string"
+      constraints="package|noempty|unique"
+      suggest="${packageName}.${featureName?lower_case}"
+      visibility="false" />
 
     <thumbs>
         <thumb>template_blank_fragment.png</thumb>
