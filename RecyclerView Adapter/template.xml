@@ -9,6 +9,59 @@
 
     <category value="Fragment" />
 
+    <parameter
+        id="adapterName"
+        name="Name"
+        type="string"
+        constraints="nonempty|unique"
+        default="Main"
+        help="The name of Adapter"/>
+
+    <parameter
+        id="showComponents"
+        name="Do you want to see the components that are being created?"
+        type="boolean"
+        default="false"
+        help="Do you want to see the components that are being created?" />
+
+    <parameter
+        id="adapterClassName"
+        name="Adapter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainAdapter"
+        suggest="${adapterName}Adapter"
+        visibility="showComponents"
+        help="The name of the adapter class to create" />
+
+    <parameter
+        id="viewHolderClassName"
+        name="ViewHolder Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainViewHolder"
+        suggest="${adapterName}ViewHolder"
+        visibility="showComponents"
+        help="The name of the ViewHolder class to create" />
+
+    <parameter
+        id="itemLayoutName"
+        name="Item Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="item_main"
+        suggest="item_${classToResource(adapterName)}"
+        visibility="showComponents"
+        help="The name of the item layout to create" />
+
+    <parameter
+        id="modelName"
+        name="Model Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainModel"
+        suggest="${adapterName}Model" />
+
     <thumbs>
         <thumb>template_blank_fragment.png</thumb>
     </thumbs>
