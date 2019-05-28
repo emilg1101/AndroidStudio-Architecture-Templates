@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="RecyclerView Adapter"
+    description="Create RecyclerView Adapter and ViewHolder"
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Clean Architecture" />
+
+    <parameter
+        id="adapterName"
+        name="Name"
+        type="string"
+        constraints="nonempty|unique"
+        default="Main"
+        help="The name of Adapter"/>
+
+    <parameter
+        id="adapterClassName"
+        name="Adapter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainAdapter"
+        suggest="${adapterName}Adapter"
+        help="The name of the adapter class to create" />
+
+    <parameter
+        id="viewHolderClassName"
+        name="ViewHolder Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainViewHolder"
+        suggest="${adapterName}ViewHolder"
+        help="The name of the ViewHolder class to create" />
+
+    <parameter
+        id="itemLayoutName"
+        name="Item Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="item_main"
+        suggest="item_${classToResource(adapterName)}"
+        help="The name of the item layout to create" />
+
+    <parameter
+        id="modelName"
+        name="Model Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MainModel"
+        suggest="${adapterName}Model" />
+
+    <parameter
+        id="isInnerViewHolder"
+        name="Inner ViewHolder?"
+        type="boolean"
+        default="true"
+        help="Inner ViewHolder?" />
+
+    <parameter
+        id="hasItemClickListener"
+        name="Enable item click listener?"
+        type="boolean"
+        default="false"
+        help="Enable item click listener?" />
+
+    <thumbs>
+        <thumb>templates_recyclerview_adapter.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
