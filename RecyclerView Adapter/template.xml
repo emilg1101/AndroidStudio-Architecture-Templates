@@ -7,7 +7,7 @@
     minApi="7"
     minBuildApi="8">
 
-    <category value="Fragment" />
+    <category value="Clean Architecture" />
 
     <parameter
         id="adapterName"
@@ -18,20 +18,12 @@
         help="The name of Adapter"/>
 
     <parameter
-        id="showComponents"
-        name="Do you want to see the components that are being created?"
-        type="boolean"
-        default="false"
-        help="Do you want to see the components that are being created?" />
-
-    <parameter
         id="adapterClassName"
         name="Adapter Name"
         type="string"
         constraints="class|nonempty|unique"
         default="MainAdapter"
         suggest="${adapterName}Adapter"
-        visibility="showComponents"
         help="The name of the adapter class to create" />
 
     <parameter
@@ -41,7 +33,6 @@
         constraints="class|nonempty|unique"
         default="MainViewHolder"
         suggest="${adapterName}ViewHolder"
-        visibility="showComponents"
         help="The name of the ViewHolder class to create" />
 
     <parameter
@@ -51,7 +42,6 @@
         constraints="layout|nonempty|unique"
         default="item_main"
         suggest="item_${classToResource(adapterName)}"
-        visibility="showComponents"
         help="The name of the item layout to create" />
 
     <parameter
@@ -62,8 +52,22 @@
         default="MainModel"
         suggest="${adapterName}Model" />
 
+    <parameter
+        id="isInnerViewHolder"
+        name="Inner ViewHolder?"
+        type="boolean"
+        default="true"
+        help="Inner ViewHolder?" />
+
+    <parameter
+        id="hasItemClickListener"
+        name="Enable item click listener?"
+        type="boolean"
+        default="false"
+        help="Enable item click listener?" />
+
     <thumbs>
-        <thumb>template_blank_fragment.png</thumb>
+        <thumb>templates_recyclerview_adapter.png</thumb>
     </thumbs>
 
     <globals file="globals.xml.ftl" />
