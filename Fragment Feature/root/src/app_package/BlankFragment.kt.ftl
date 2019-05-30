@@ -16,17 +16,17 @@ import ${applicationPackage}.R
 class ${fragmentName} : <#if isBaseClassesEnable>${baseFragment}<#else>MvpAppCompatFragment</#if>(), ${viewName} {
 
     @ProvidePresenter
-    fun provide${presenterName}() = presenterProvider.get()
+    fun providePresenter() = presenterProvider.get()
 
     @InjectPresenter
-    lateinit var ${presenterName?uncap_first}: ${presenterName}
+    lateinit var presenter: ${presenterName}
 
     @field:Inject
     lateinit var presenterProvider: Provider<${presenterName}>
 
     companion object {
 
-        const val TAG = "fragment_${classToResource(fragmentName)}"
+        val TAG = ${fragmentName}::class.java.name
 
         fun newInstance() = ${fragmentName}()
     }

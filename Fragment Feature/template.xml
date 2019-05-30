@@ -7,8 +7,8 @@
     minApi="7"
     minBuildApi="8">
 
-    <category value="Fragment" />
-    
+    <category value="Clean Architecture" />
+
     <parameter
         id="featureName"
         name="Feature Name"
