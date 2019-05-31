@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="1"
+    name="Retrofit"
+    description="Create Retrofit API"
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Clean Architecture" />
+
+    <parameter
+        id="apiName"
+        name="API Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MyApi"
+        help="The name of API"/>
+
+    <parameter
+        id="apiRequestClassName"
+        name="API Request Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MyApiRequest"
+        suggest="${apiName}Request"
+        help="The name of the api request class to create" />
+
+    <parameter
+        id="apiDecoratorClassName"
+        name="API Decorator Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MyApiRequestDecorator"
+        suggest="${apiName}RequestDecorator"
+        help="The name of the api request decorator class to create" />
+
+    <parameter
+        id="moduleName"
+        name="Dagger2 Module Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MyApiModule"
+        suggest="${apiName}Module"
+        visibility="false" />
+
+    <parameter
+        id="qualifierName"
+        name="Dagger2 Qualifier Name"
+        type="string"
+        constraints="class|noempty|unique"
+        default="MyApiQualifier"
+        suggest="${apiName}Qualifier"
+        visibility="false" />
+
+    <parameter
+        id="apiPackageName"
+        type="string"
+        constraints="package|noempty|unique"
+        suggest="${packageName}.${apiName?lower_case}"
+        visibility="false" />
+
+    <parameter
+        id="apiRequestPackageName"
+        type="string"
+        constraints="package|noempty|unique"
+        suggest="${apiPackageName}.request"
+        visibility="false" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
