@@ -16,7 +16,7 @@ import ${applicationPackage}.R
 class ${fragmentName} : <#if isBaseClassesEnable>${baseFragment}<#else>MvpAppCompatFragment</#if>(), ${viewName} {
 
     @ProvidePresenter
-    fun providePresenter() = presenterProvider.get()
+    fun providePresenter(): ${presenterName} = presenterProvider.get()
 
     @InjectPresenter
     lateinit var presenter: ${presenterName}
@@ -25,8 +25,6 @@ class ${fragmentName} : <#if isBaseClassesEnable>${baseFragment}<#else>MvpAppCom
     lateinit var presenterProvider: Provider<${presenterName}>
 
     companion object {
-
-        val TAG = ${fragmentName}::class.java.name
 
         fun newInstance() = ${fragmentName}()
     }
